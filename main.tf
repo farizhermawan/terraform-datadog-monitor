@@ -7,7 +7,7 @@ locals {
 
   full_message = <<EOF
 ${var.message}
-${var.dashboard_id != "" ? "Timeboard: https://app.datadoghq.com/dashboard/${var.dashboard_id}" : ""}
+${var.dashboard_id != "" ? "Dashboard: https://app.datadoghq.com/dashboard/${var.dashboard_id}" : ""}
 ${var.dashboard_id == "" && var.timeboard_id != "" ? "Timeboard: https://app.datadoghq.com/dash/${var.timeboard_id}" : ""}
 Related timeboards: https://app.datadoghq.com/dashboard/lists?q=${join("+-+", list(var.product_domain, var.service, var.environment))}
 Related monitors: https://app.datadoghq.com/monitors/manage?q=tag%3A%28%22${join("%22%20AND%20%22", local.tags)}%22%29
