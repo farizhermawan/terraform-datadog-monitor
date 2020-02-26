@@ -52,6 +52,12 @@ variable "timeboard_id" {
   description = "The timeboard id for this monitor"
 }
 
+variable "dashboard_id" {
+  type        = "string"
+  default     = ""
+  description = "The timeboard_id if you are using new datadog_dashboard block"
+}
+
 variable "recipients" {
   type        = "list"
   default     = []
